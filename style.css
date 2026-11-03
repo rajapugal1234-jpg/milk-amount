@@ -1,0 +1,915 @@
+
+/* =====================================
+   MILK ACCOUNT MANAGER PRO
+   COMPLETE CSS DESIGN
+===================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --ink: #172b25;
+    --muted: #718078;
+    --green: #187653;
+    --green-dark: #105b3e;
+    --mint: #eaf5ef;
+    --line: #e4ebe6;
+    --paper: #ffffff;
+    --bg: #f4f7f5;
+    --red: #c94b4b;
+}
+
+/* =====================================
+   BODY
+===================================== */
+
+body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: Inter, Segoe UI, Arial, sans-serif;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* =====================================
+   HEADER
+===================================== */
+
+.app-header {
+    background: linear-gradient(115deg, #104b36, #187653);
+    color: white;
+    padding: 22px 24px;
+}
+
+.header-inner {
+    max-width: 1180px;
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.brand-mark {
+    width: 48px;
+    height: 48px;
+    border-radius: 15px;
+    background: #ffffff20;
+
+    display: grid;
+    place-items: center;
+
+    font-size: 25px;
+}
+
+.brand h1 {
+    font-size: 21px;
+    margin-bottom: 4px;
+}
+
+.brand p {
+    color: #d1e8dc;
+    font-size: 13px;
+}
+
+.today-block {
+    text-align: right;
+    display: grid;
+    gap: 4px;
+}
+
+.today-block span {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #cde3d7;
+}
+
+.today-block strong {
+    font-size: 15px;
+}
+
+/* =====================================
+   MAIN CONTAINER
+===================================== */
+
+.container {
+    max-width: 1180px;
+    margin: 26px auto;
+    padding: 0 20px;
+}
+
+/* =====================================
+   OVERVIEW SECTION
+===================================== */
+
+.overview {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+
+    padding: 22px 24px;
+    margin-bottom: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.overview-intro {
+    max-width: 300px;
+}
+
+.eyebrow {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+    color: var(--green);
+
+    display: block;
+    margin-bottom: 7px;
+}
+
+.overview h2 {
+    font-size: 30px;
+}
+
+.overview h2 small {
+    font-size: 14px;
+    color: var(--muted);
+    font-weight: 500;
+}
+
+.overview-intro p {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-top: 8px;
+}
+
+/* =====================================
+   STATISTICS CARDS
+===================================== */
+
+.stats-grid {
+    display: flex;
+    gap: 12px;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.stat-card {
+    min-width: 145px;
+    padding: 15px 17px;
+
+    background: #f6faf7;
+    border: 1px solid #e7f0e9;
+    border-radius: 13px;
+
+    display: grid;
+    gap: 8px;
+}
+
+.stat-card span {
+    font-size: 11px;
+    color: var(--muted);
+}
+
+.stat-card strong {
+    font-size: 21px;
+}
+
+/* =====================================
+   MAIN GRID
+===================================== */
+
+.main-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 20px;
+    align-items: start;
+}
+
+.left-column,
+.right-column {
+    display: grid;
+    gap: 20px;
+}
+
+/* =====================================
+   PANEL DESIGN
+===================================== */
+
+.panel {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 17px;
+
+    padding: 21px;
+    margin-bottom: 0;
+
+    min-width: 0;
+}
+
+.section-heading,
+.records-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 17px;
+}
+
+.section-heading h2,
+.records-header h2 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.section-heading .eyebrow,
+.records-header .eyebrow {
+    margin-bottom: 5px;
+}
+
+/* =====================================
+   INPUTS
+===================================== */
+
+.member-form {
+    display: flex;
+    gap: 8px;
+}
+
+.member-form input,
+.entry-form input,
+.entry-form select,
+.month-picker input {
+
+    width: 100%;
+    min-width: 0;
+
+    border: 1px solid var(--line);
+    border-radius: 9px;
+
+    padding: 11px 12px;
+
+    background: #fff;
+    color: var(--ink);
+
+    outline: none;
+}
+
+.member-form input:focus,
+.entry-form input:focus,
+.entry-form select:focus {
+    border-color: var(--green);
+}
+
+/* =====================================
+   BUTTONS
+===================================== */
+
+.button-primary,
+.button-outline,
+.icon-button {
+
+    border: 0;
+    border-radius: 9px;
+
+    padding: 11px 15px;
+
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.button-primary {
+    background: var(--green);
+    color: #fff;
+
+    transition: 0.2s;
+}
+
+.button-primary:hover {
+    background: var(--green-dark);
+}
+
+.button-outline {
+    background: #fff;
+    color: var(--green);
+    border: 1px solid #b9d7c5;
+}
+
+.button-outline:hover {
+    background: var(--mint);
+}
+
+.icon-button {
+    background: var(--mint);
+    color: var(--green);
+    font-size: 22px;
+    padding: 4px 12px;
+}
+
+.icon-button:hover {
+    background: #d6ebdd;
+}
+
+/* =====================================
+   MEMBER LIST
+===================================== */
+
+.member-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.member-chip {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    background: #f1f7f3;
+    border: 1px solid #e1eee5;
+    border-radius: 30px;
+
+    padding: 7px 8px 7px 12px;
+    font-size: 13px;
+}
+
+.remove-member {
+    border: 0;
+    background: #fff0f0;
+    color: var(--red);
+
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+
+    font-size: 17px;
+    line-height: 1;
+}
+
+.remove-member:hover {
+    background: #ffdede;
+}
+
+/* =====================================
+   CALENDAR
+===================================== */
+
+.month-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.month-controls strong {
+    font-size: 12px;
+    min-width: 105px;
+    text-align: center;
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 5px;
+}
+
+.weekday {
+    text-align: center;
+    color: var(--muted);
+
+    font-size: 10px;
+    font-weight: 700;
+
+    padding: 7px 0;
+}
+
+.calendar-day {
+
+    min-height: 55px;
+
+    border: 1px solid transparent;
+    border-radius: 9px;
+
+    background: #f7f9f8;
+    color: var(--ink);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 4px;
+    padding: 5px 2px;
+
+    cursor: pointer;
+    pointer-events: auto;
+
+    transition: 0.2s;
+}
+
+.calendar-day:hover:not(:disabled) {
+    border-color: #9bc9ad;
+    background: #eef7f1;
+}
+
+.calendar-day.active {
+    background: var(--green);
+    color: #fff;
+    border-color: var(--green);
+}
+
+.calendar-day.has-entry:not(.active) {
+    background: #e6f4eb;
+    border-color: #cce7d5;
+}
+
+.calendar-day:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+.calendar-day.empty {
+    background: transparent;
+    pointer-events: none;
+}
+
+.day-number {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.calendar-day small {
+    font-size: 9px;
+    color: inherit;
+    opacity: 0.85;
+}
+
+/* CALENDAR LEGEND */
+
+.calendar-legend {
+    display: flex;
+    gap: 17px;
+
+    margin-top: 13px;
+
+    color: var(--muted);
+    font-size: 10px;
+}
+
+.calendar-legend span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.selected-dot {
+    background: var(--green);
+}
+
+.entry-dot {
+    background: #9ccfae;
+}
+
+/* =====================================
+   DAILY ENTRY
+===================================== */
+
+.date-tag,
+.count-pill {
+    background: var(--mint);
+    color: var(--green);
+
+    padding: 6px 9px;
+    border-radius: 20px;
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.entry-mode {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+
+    background: #f5f9f6;
+    padding: 10px 12px;
+
+    border-radius: 9px;
+
+    color: var(--green);
+    font-size: 11px;
+    font-weight: 700;
+
+    margin-bottom: 14px;
+}
+
+.entry-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 13px;
+}
+
+.entry-form label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #53645b;
+
+    display: grid;
+    gap: 7px;
+}
+
+.entry-form label:nth-child(3) {
+    grid-column: 1 / -1;
+}
+
+.full-button {
+    grid-column: 1 / -1;
+}
+
+.helper-text {
+    font-size: 10px;
+    color: var(--muted);
+
+    line-height: 1.5;
+    margin: 12px 0 0;
+}
+
+/* =====================================
+   TABLE DESIGN
+===================================== */
+
+.table-wrap {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 12px;
+}
+
+th {
+    font-size: 10px;
+    color: var(--muted);
+    font-weight: 700;
+    background: #f7f9f8;
+}
+
+th,
+td {
+    padding: 12px 10px;
+    border-bottom: 1px solid var(--line);
+    white-space: nowrap;
+}
+
+td {
+    font-weight: 500;
+}
+
+.empty-message {
+    text-align: center;
+    color: var(--muted);
+    padding: 22px !important;
+}
+
+/* =====================================
+   EDIT AND DELETE BUTTONS
+===================================== */
+
+.edit-btn,
+.delete-btn {
+    border: 0;
+    border-radius: 7px;
+
+    padding: 6px 9px;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    margin-right: 4px;
+}
+
+.edit-btn {
+    background: #eaf3ff;
+    color: #2865a5;
+}
+
+.edit-btn:hover {
+    background: #d9eaff;
+}
+
+.delete-btn {
+    background: #fff0f0;
+    color: var(--red);
+}
+
+.delete-btn:hover {
+    background: #ffdede;
+}
+
+/* =====================================
+   MONTHLY REPORT
+===================================== */
+
+.report-panel {
+    margin-top: 20px;
+}
+
+.report-heading {
+    align-items: end;
+}
+
+.month-picker {
+    font-size: 10px;
+    color: var(--muted);
+
+    display: grid;
+    gap: 6px;
+}
+
+.month-picker input {
+    padding: 8px 10px;
+}
+
+/* =====================================
+   GRAND TOTAL
+===================================== */
+
+.summary-footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    gap: 20px;
+    padding: 17px 10px;
+
+    font-size: 13px;
+}
+
+.summary-footer strong {
+    font-size: 20px;
+    color: var(--green);
+}
+
+/* =====================================
+   REPORT ACTION BUTTONS
+===================================== */
+
+.action-row {
+    display: flex;
+    justify-content: flex-end;
+    gap: 9px;
+
+    border-top: 1px solid var(--line);
+    padding-top: 15px;
+}
+
+/* =====================================
+   FOOTER
+===================================== */
+
+footer {
+    text-align: center;
+    color: #96a39b;
+
+    font-size: 10px;
+    padding: 24px;
+}
+
+/* =====================================
+   TABLET RESPONSIVE DESIGN
+===================================== */
+
+@media (max-width: 850px) {
+
+    .overview {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .stats-grid {
+        width: 100%;
+        justify-content: stretch;
+    }
+
+    .stat-card {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .main-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* =====================================
+   MOBILE RESPONSIVE DESIGN
+===================================== */
+
+@media (max-width: 560px) {
+
+    .app-header {
+        padding: 17px 15px;
+    }
+
+    .brand h1 {
+        font-size: 17px;
+    }
+
+    .brand p {
+        font-size: 11px;
+    }
+
+    .brand-mark {
+        width: 42px;
+        height: 42px;
+    }
+
+    .container {
+        padding: 0 12px;
+        margin: 14px auto;
+    }
+
+    .overview,
+    .panel {
+        padding: 16px;
+        border-radius: 13px;
+    }
+
+    .stats-grid {
+        gap: 7px;
+    }
+
+    .stat-card {
+        padding: 11px 9px;
+    }
+
+    .stat-card span {
+        font-size: 9px;
+    }
+
+    .stat-card strong {
+        font-size: 16px;
+    }
+
+    .overview h2 {
+        font-size: 26px;
+    }
+
+    .member-form {
+        flex-direction: column;
+    }
+
+    .member-form button {
+        width: 100%;
+    }
+
+    .calendar-day {
+        min-height: 47px;
+    }
+
+    .calendar-day small {
+        font-size: 8px;
+    }
+
+    .entry-form {
+        grid-template-columns: 1fr;
+    }
+
+    .entry-form label:nth-child(3),
+    .full-button {
+        grid-column: auto;
+    }
+
+    .report-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .month-controls {
+        gap: 6px;
+    }
+
+    .month-controls strong {
+        min-width: 95px;
+    }
+
+    .action-row {
+        flex-direction: column;
+    }
+
+    .action-row button {
+        width: 100%;
+    }
+
+    .today-block strong {
+        font-size: 12px;
+    }
+
+}
+
+/* =====================================
+   PRINT REPORT
+===================================== */
+
+@media print {
+
+    body {
+        background: #fff;
+    }
+
+    .app-header {
+        background: #fff;
+        color: #000;
+        padding: 10px 0;
+    }
+
+    .app-header .brand p,
+    .overview,
+    .left-column,
+    .entry-form,
+    .helper-text,
+    .action-row,
+    footer {
+        display: none !important;
+    }
+
+    .container {
+        max-width: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .main-grid {
+        display: block;
+    }
+
+    .right-column {
+        display: none;
+    }
+
+    .panel {
+        border: 0;
+        padding: 0;
+    }
+
+    .report-panel {
+        display: block !important;
+    }
+
+    .report-heading {
+        margin-bottom: 10px;
+    }
+
+    .month-picker {
+        display: none;
+    }
+
+    .summary-footer {
+        border-top: 1px solid #999;
+    }
+
+    .table-wrap {
+        overflow: visible;
+    }
+
+    th,
+    td {
+        color: #000;
+        border-color: #ccc;
+    }
+
+}

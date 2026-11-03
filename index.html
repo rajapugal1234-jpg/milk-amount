@@ -1,0 +1,482 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Milk Account Manager</title>
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="app-header">
+
+        <div class="header-inner">
+
+            <div class="brand">
+
+                <div class="brand-mark">🥛</div>
+
+                <div>
+                    <h1>Milk Account Manager</h1>
+                    <p>Daily milk entries & monthly accounts</p>
+                </div>
+
+            </div>
+
+            <div class="today-block">
+                <span>Today</span>
+                <strong id="todayDate">—</strong>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="container">
+
+        <!-- OVERVIEW -->
+        <section class="overview">
+
+            <div class="overview-intro">
+
+                <div>
+                    <span class="eyebrow">MILK RATE</span>
+                    <h2>₹45 <small>/ litre</small></h2>
+                </div>
+
+                <p>
+                    Choose any previous or current date in the
+                    calendar to add or manage entries.
+                </p>
+
+            </div>
+
+
+            <!-- STATISTICS -->
+            <div class="stats-grid">
+
+                <article class="stat-card">
+                    <span>Total members</span>
+                    <strong id="memberCount">0</strong>
+                </article>
+
+                <article class="stat-card">
+                    <span>Selected day milk</span>
+                    <strong id="selectedMilk">0.00 L</strong>
+                </article>
+
+                <article class="stat-card">
+                    <span>Selected day amount</span>
+                    <strong id="selectedAmount">₹0.00</strong>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- MAIN GRID -->
+        <div class="main-grid">
+
+
+            <!-- LEFT COLUMN -->
+            <div class="left-column">
+
+
+                <!-- MEMBER MANAGEMENT -->
+                <section class="panel">
+
+                    <div class="section-heading">
+
+                        <div>
+                            <span class="eyebrow">CUSTOMERS</span>
+                            <h2>Members</h2>
+                        </div>
+
+                    </div>
+
+
+                    <!-- ADD MEMBER FORM -->
+                    <form id="memberForm" class="member-form">
+
+                        <input
+                            id="memberName"
+                            type="text"
+                            placeholder="Enter member name"
+                            maxlength="60"
+                            required
+                        >
+
+                        <button
+                            class="button-primary"
+                            type="submit"
+                        >
+                            + Add Member
+                        </button>
+
+                    </form>
+
+
+                    <!-- MEMBER LIST -->
+                    <div id="memberList" class="member-list"></div>
+
+                </section>
+
+
+
+                <!-- CALENDAR -->
+                <section class="panel">
+
+                    <div class="section-heading calendar-heading">
+
+                        <div>
+                            <span class="eyebrow">SELECT A DAY</span>
+                            <h2>Calendar</h2>
+                        </div>
+
+
+                        <!-- MONTH NAVIGATION -->
+                        <div class="month-controls">
+
+                            <button
+                                id="prevMonth"
+                                class="icon-button"
+                                type="button"
+                                aria-label="Previous month"
+                            >
+                                ‹
+                            </button>
+
+                            <strong id="calendarMonth">
+                                Month
+                            </strong>
+
+                            <button
+                                id="nextMonth"
+                                class="icon-button"
+                                type="button"
+                                aria-label="Next month"
+                            >
+                                ›
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- CALENDAR DATES -->
+                    <div id="calendar" class="calendar"></div>
+
+
+                    <!-- CALENDAR LEGEND -->
+                    <div class="calendar-legend">
+
+                        <span>
+                            <i class="legend-dot selected-dot"></i>
+                            Selected date
+                        </span>
+
+                        <span>
+                            <i class="legend-dot entry-dot"></i>
+                            Has entries
+                        </span>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+
+
+            <!-- RIGHT COLUMN -->
+            <div class="right-column">
+
+
+                <!-- DAILY MILK ENTRY -->
+                <section class="panel">
+
+                    <div class="section-heading">
+
+                        <div>
+                            <span class="eyebrow">DAILY ACCOUNT</span>
+
+                            <h2 id="selectedDateTitle">
+                                Selected date
+                            </h2>
+                        </div>
+
+                        <span id="dateTag" class="date-tag"></span>
+
+                    </div>
+
+
+                    <!-- ENTRY MODE -->
+                    <div class="entry-mode">
+
+                        <span id="entryModeText">
+                            Add New Entry
+                        </span>
+
+                        <span>
+                            Rate: ₹45 / L
+                        </span>
+
+                    </div>
+
+
+                    <!-- ENTRY FORM -->
+                    <form id="entryForm" class="entry-form">
+
+
+                        <!-- MEMBER SELECTION -->
+                        <label>
+
+                            Member
+
+                            <select id="memberSelect" required>
+
+                                <option value="">
+                                    Select Member
+                                </option>
+
+                            </select>
+
+                        </label>
+
+
+
+                        <!-- MILK QUANTITY -->
+                        <label>
+
+                            Milk quantity
+
+                            <select id="quantity">
+
+                                <option value="0">
+                                    No Milk
+                                </option>
+
+                            </select>
+
+                        </label>
+
+
+
+                        <!-- AMOUNT -->
+                        <label>
+
+                            Amount (₹)
+
+                            <input
+                                id="amount"
+                                type="text"
+                                value="0.00"
+                                readonly
+                            >
+
+                        </label>
+
+
+
+                        <!-- SAVE BUTTON -->
+                        <button
+                            id="saveEntry"
+                            class="button-primary full-button"
+                            type="submit"
+                        >
+                            Save Entry
+                        </button>
+
+                    </form>
+
+
+                    <p class="helper-text">
+                        You can select today or any previous date.
+                        Each member can have one entry per date.
+                    </p>
+
+                </section>
+
+
+
+                <!-- DAILY RECORDS -->
+                <section class="panel">
+
+                    <div class="records-header">
+
+                        <div>
+                            <span class="eyebrow">SAVED ENTRIES</span>
+
+                            <h2 id="recordsTitle">
+                                Daily entries
+                            </h2>
+                        </div>
+
+                        <span id="entryCount" class="count-pill">
+                            0 Entries
+                        </span>
+
+                    </div>
+
+
+                    <!-- DAILY RECORD TABLE -->
+                    <div class="table-wrap">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+                                    <th>Member</th>
+                                    <th>Quantity</th>
+                                    <th>Amount</th>
+                                    <th>Actions</th>
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="dailyRecords">
+
+                                <tr>
+                                    <td colspan="4" class="empty-message">
+                                        No entries for this date.
+                                    </td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- MONTHLY REPORT -->
+        <section class="panel report-panel">
+
+            <div class="section-heading report-heading">
+
+                <div>
+                    <span class="eyebrow">MONTHLY SUMMARY</span>
+                    <h2>Monthly Report</h2>
+                </div>
+
+
+                <!-- MONTH SELECTOR -->
+                <label class="month-picker">
+
+                    Choose month
+
+                    <input
+                        id="reportMonth"
+                        type="month"
+                    >
+
+                </label>
+
+            </div>
+
+
+            <!-- MONTHLY REPORT TABLE -->
+            <div class="table-wrap">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Member</th>
+                            <th>Total milk</th>
+                            <th>Entry days</th>
+                            <th>Total amount</th>
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="monthlyReport">
+
+                        <tr>
+                            <td colspan="4" class="empty-message">
+                                No members added yet.
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <!-- GRAND TOTAL -->
+            <div class="summary-footer">
+
+                <span>Grand Total</span>
+
+                <strong id="grandTotal">
+                    ₹0.00
+                </strong>
+
+            </div>
+
+
+            <!-- REPORT BUTTONS -->
+            <div class="action-row">
+
+                <button
+                    id="exportBtn"
+                    class="button-outline"
+                    type="button"
+                >
+                    ↓ Download CSV
+                </button>
+
+                <button
+                    id="printBtn"
+                    class="button-primary"
+                    type="button"
+                >
+                    Print Report
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer>
+
+            Milk Account Manager ·
+            Data is saved in this browser on this device.
+
+        </footer>
+
+    </main>
+
+
+    <!-- JAVASCRIPT FILE -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
